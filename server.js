@@ -2,6 +2,8 @@ const express = require('express')
 const mysql = require('mysql')
 const myconn = require('express-myconnection')
 
+const routes = require('./route')
+
 
 //initializing and configurations-----------------------------------
 const app = express();
@@ -16,15 +18,15 @@ const dbOptions = {
 
 //midlewares
  app.use( myconn(mysql, dbOptions, 'single'))
+ app.use(express.json())
+
 
 //routes------------------------------------------------------------
 app.get('/', (req,res) => {
     res.send('Welcome to my Simple API Project');
 })
 
-app.get('/api', (req, res) => {
-    res.send( ' Probando nueva api /api');
-})
+app.use('/api', routes)
 
 
 //SERVER runing-----------------------------------------------------
