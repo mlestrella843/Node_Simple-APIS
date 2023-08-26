@@ -7,7 +7,21 @@ POST http://localhost:9000/api HTTP/1.1
 Content-Type: application/json
 
 {
-    "titulo": "Los 7 habitos de la gente exitosa",
-    "autor": "Rodrigo Feliz",
-    "edicion": 6
+    "titulo": "Recuerdos de una Noche de Verano",
+    "autor": "Alex Smith",
+    "edicion": 7
+}
+
+###
+DELETE http://localhost:9000/api/5 HTTP/1.1
+Content-Type: application/json
+
+###
+PUT http://localhost:9000/api/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "titulo": "Hoy es jueves primero de mayo",
+    "autor": "Julian Alvarez",
+    "edicion": 5
 }
